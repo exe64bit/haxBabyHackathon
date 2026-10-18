@@ -1,0 +1,22 @@
+{
+  "name": "pip-midnight-observatory",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pip's Midnight Observatory - A Retro Kids' Dream World Full-Stack Application",
+  "scripts": {
+    "dev": "concurrently -n \"server,client\" -c \"magenta,cyan\" \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "build": "npm run build --prefix client",
+    "render:build": "npm install && npm --prefix server install && npm --prefix client install && npm --prefix client run build",
+    "start": "node server/src/server.js",
+    "seed": "npm run seed --prefix server",
+    "test": "npm run test --prefix server && npm run test --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
